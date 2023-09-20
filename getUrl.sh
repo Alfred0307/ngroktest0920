@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#先睡三秒測試
+#睡三秒 測過這樣才吃得到不然會none
 sleep 3
 
-# 切換到存儲庫目錄
+# 切換到git管控的目錄
 cd /home/bigred/alfred/ngrok0920
 
 # 執行 Python 腳本
@@ -15,6 +15,6 @@ git add .
 # 提交更改
 git commit -m "Update URL"
 
-# 推送更改到遠程存儲庫（使用 -f 強制推送）
+# 推送更改到github（使用 -f 強制推送）
 git push -f
 
