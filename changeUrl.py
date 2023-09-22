@@ -22,24 +22,24 @@ if __name__ == "__main__":
 
 import chardet
 
-# 检测文件编码
+# 檢測文件編碼
 with open('index.html', 'rb') as file:
     result = chardet.detect(file.read())
 
-# 使用检测到的编码打开文件
+# 使用檢測到的編碼打開文件
 with open('index.html', 'r', encoding=result['encoding']) as file:
     html_content = file.read()
 
-# 将HTML内容拆分成行
+# 將HTML内容拆分成行
 lines = html_content.split('\n')
 
 # 要替换的新文本
 new_text = '<meta http-equiv="refresh" content="1;url={}">'.format(url)
 
 # 替换第六行
-lines[5] = new_text  # 注意：Python中列表索引是从0开始的，所以第六行的索引是5
+lines[5] = new_text 
 
-# 重新构建HTML内容
+# 重建HTML内容
 html_content = '\n'.join(lines)
 
 with open('index.html', 'w',encoding=result['encoding']) as file:
