@@ -1,8 +1,10 @@
 import os
 import json
 
+TunnelPort=4040
+
 def get_ngrok_url(startswith: str = 'https://') -> str:
-    ngrok_tunnels = 'http://localhost:4040/api/tunnels'
+    ngrok_tunnels = 'http://localhost:{}/api/tunnels'.format(TunnelPort)
     r = os.system(f'curl {ngrok_tunnels} > tunnels.json 2> /dev/null')
 
     if r != 0:
